@@ -43,7 +43,7 @@ La imagen original y la máscara se relacionan tal que, sea $A$ la imagen de ent
 A lo largo de la literatura se encuentran diferentes métodos para el reconocimiento de objetos a nivel de píxel, todos ellos haciendo uso de \textit{machine learning}~\cite{fabaret, long} pero, al unir series de convoluciones junto con capas de \textit{max-pooling} plantean problemas en la recreaci\'on de la imagen.
 \newline
 
-Por ello, Bradrianarayanan et al.~\cite{encoderDecoder} plantean una aproximaci\'on basada en arquitectura \textit{encoder-decoder}, solventando este problema y con unos resultados considerablemente superiores al resto.
+Por ello, Bradrinarayanan et al.~\cite{encoderDecoder} plantean una aproximaci\'on basada en arquitectura \textit{encoder-decoder}, solventando este problema y con unos resultados considerablemente superiores al resto.
 En la figura~\ref{fig:segnet} se puede observar la arquitectura planteada.
 \newline
 
@@ -69,7 +69,10 @@ Entre estas se pueden destacar algunas como ResNet~\cite{resnet}, Xception~\cite
 
 \section{Desarrollo}
 \todo{completar}
-Para la implementación de la red se decidió utilizar una arquitectura \textit{UNet} basada en el modelo \textit{Xception} por medio de 
+Para la implementación de la red se ha empleado una arquitectura \textit{UNet} basada en el modelo \textit{Xception} mediante la creaci\'on de una subclase de tipo \texttt{Model} dentro de la API de \texttt{Keras}.
+\newline
+
+La arquitectura presenta un modelo encoder-decoder con cuatro tama\~nos de filtros diferentes, 32, 64, 128 y 256, tanto para las capas convolucionales como para las deconvoluciones.
 
 \section{Problemas encontrados}
 \subsection{Creación la clase UNetX}
